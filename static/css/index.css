@@ -1,0 +1,38 @@
+body{
+background-image:url(Weather.jpg);
+background-attachment: local;
+background-position: 100%;
+}
+h1{
+    text-align: center;
+    font-size: 400%;
+    font-family: -apple-system, BlinkMacSystemFont;
+    color:red;
+}
+form{
+    text-align: center;
+}
+#textbox{
+    width: 50%;
+    font-size: 20px;
+}
+label{
+    text-align: center;
+    font-size: 400%;
+    font-style: normal;
+    color: slateblue;
+    padding: 10%;
+}
+button{
+    padding-left: 4%;
+    padding-right: 4%;
+    padding-top: 2%;
+    padding-bottom:2%;
+    font-size: 25px;
+    border-radius: 30%;
+    font-style: bold;
+    font-family: -apple-system, BlinkMacSystemFont;
+    color:rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.452);
+    
+}

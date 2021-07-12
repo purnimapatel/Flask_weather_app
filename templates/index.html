@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/index.css') }}">
+    <title>Results</title>
+</head>
+<body>
+    <h1>Weather Condition Updates</h1>
+    <form action="{{url_for('results') }}" method = "POST">
+        <div>
+            <label>Enter the Location</label>
+            <br>
+            <br> <br><br>
+            <input id = "textbox" type = "text" name = "city_name">
+        </div>
+        <div>
+            <br><br><br><br>
+            <button>SUBMIT</button>
+        </div>
+    </form>
+</body>
+</html>
