@@ -10,8 +10,8 @@ def index():
 @app.route('/results', methods = ['POST'])
 def results():
     city_name = request.form['city_name']
-    api_key = get_api_key()
-    data = results_api(city_name, api_key)
+    api_key = "40f2aad59fa86762c55d14cbc770afb6"
+    data = results_api(city_name)
     temp = "{0:.2f}".format(data["main"]["temp"])
     feels_like = "{0:.2f}".format(data["main"]["feels_like"])
     weather = data["weather"][0]["main"]
@@ -20,16 +20,12 @@ def results():
     humidity = data["main"]["humidity"]
     return render_template('results.html',location=location, temp = temp, feels_like= feels_like, weather = weather, pressure = pressure , humidity = humidity)
 
-def get_api_key():
-    config = configparser.ConfigParser()
-    config.read('config.ini')
-    return config['openweathermap']['api']
 
-def results_api(city_name, api_key):
-    api_url = "http://api.openweathermap.org/data/2.5/weather?q={}&appid={}&units=metric".format(city_name, api_key)
+def results_api(city_name):
+    api_url = "http://api.openweathermap.org/data/2.5/weather?q={}&appid=40f2aad59fa86762c55d14cbc770afb6&units=metric".format(city_name)
     r = requests.get(api_url)
     return r.json()
-results_api("Lucknow", "74636d0827db5418b9d785c78dc089b3")
+results_api("Lucknow")
     
 if __name__ == '__main__':
     app.run(debug=True)
